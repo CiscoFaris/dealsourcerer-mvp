@@ -1,0 +1,10 @@
+{
+  "capabilities": [
+    {"group":"Networking","items":["Switching","Routing","Wireless","SD-WAN","SASE Networking","Data Center Networking","Network Automation"]},
+    {"group":"Security","items":["Zero Trust","SASE Security","XDR","Firewall","Secure Access","Email Security","Identity Security"]},
+    {"group":"Cloud & Infrastructure","items":["Hybrid Cloud","Kubernetes","Cloud Networking","Data Center Infrastructure","AI Infrastructure","GPU Networking","Storage Networking"]},
+    {"group":"Observability","items":["App Performance","Infrastructure Monitoring","Network Observability","Log Analytics"]},
+    {"group":"Collaboration","items":["Meetings","Calling","Contact Center","Collaboration Devices"]},
+    {"group":"Edge & IoT","items":["Industrial IoT","Edge Compute","Connected Devices","Private 5G / Mobility"]}
+  ]
+}

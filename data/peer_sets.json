@@ -1,0 +1,16 @@
+{
+  "queries": [
+    {
+      "keyword": "cisco",
+      "peers": ["Arista Networks","Juniper Networks","Hewlett Packard Enterprise","Dell Technologies","Palo Alto Networks","Fortinet","Huawei","Nokia","Ericsson"]
+    },
+    {
+      "keyword": "neocloud",
+      "peers": ["CoreWeave","Lambda","Crusoe","Runpod","Together AI","Vast.ai","Paperspace","Massed Compute"]
+    },
+    {
+      "keyword": "gpu cloud",
+      "peers": ["CoreWeave","Lambda","Crusoe","Runpod","Together AI","Vast.ai","Paperspace","Massed Compute"]
+    }
+  ]
+}
