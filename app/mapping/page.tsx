@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { apiFetch } from "@/lib/apiFetch";
 
 type Industry = { slug: string; name: string; url: string };
 type Topic = { topic: string; source_url: string | null };
@@ -25,7 +26,7 @@ export default function MappingPage() {
   async function loadIndustries() {
     setLoading(true);
     try {
-      const r = await fetch("/api/cisco/usecases/list");
+      const r = await apiFetch("/api/cisco/usecases/list");
       const j = await r.json();
       setIndustries(j.industries || []);
     } finally {
@@ -37,7 +38,7 @@ export default function MappingPage() {
     if (!slug) return;
     setLoading(true);
     try {
-      const r = await fetch(`/api/cisco/usecases/list?industry_slug=${encodeURIComponent(slug)}`);
+      const r = await apiFetch(`/api/cisco/usecases/list?industry_slug=${encodeURIComponent(slug)}`);
       const j = await r.json();
       setTopics(j.priority_topics || []);
       setUseCases(j.use_cases || []);
@@ -49,7 +50,7 @@ export default function MappingPage() {
   async function searchCompany() {
     const q = companyQuery.trim();
     if (!q) return;
-    const r = await fetch(`/api/companies/dbsearch?q=${encodeURIComponent(q)}`);
+    const r = await apiFetch(`/api/companies/dbsearch?q=${encodeURIComponent(q)}`);
     const j = await r.json();
     setCompanyHits(j.results || []);
   }
@@ -65,7 +66,7 @@ export default function MappingPage() {
     }
     setMappingBusy(true);
     try {
-      const r = await fetch("/api/mapping/company", {
+      const r = await apiFetch("/api/mapping/company", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ company_id: selectedCompanyId, industry_slug: industrySlug })

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { apiFetch } from "@/lib/apiFetch";
 
 type Row = any;
 
@@ -19,7 +20,7 @@ export default function CompaniesPage() {
     const trimmed = (name || "").trim();
     if (!trimmed) return;
 
-    const r = await fetch("/api/companies/create", {
+    const r = await apiFetch("/api/companies/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: trimmed, auto_discover: true, auto_enrich: true })
@@ -46,7 +47,7 @@ export default function CompaniesPage() {
 
     setLoading(true);
     try {
-      const r = await fetch(`/api/companies/search?q=${encodeURIComponent(query)}&source=${source}`);
+      const r = await apiFetch(`/api/companies/search?q=${encodeURIComponent(query)}&source=${source}`);
       const j = await r.json();
       setRows(j.results || []);
       setPeersInDb(j.peers_in_db || []);
@@ -69,7 +70,7 @@ export default function CompaniesPage() {
     }
     setBusyId(id);
     try {
-      const r = await fetch("/api/companies/update", {
+      const r = await apiFetch("/api/companies/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, website_url: row.website_url })
@@ -85,7 +86,7 @@ export default function CompaniesPage() {
   async function autofillAndEnrich(id: string) {
     setBusyId(id);
     try {
-      const r = await fetch("/api/companies/autofill", {
+      const r = await apiFetch("/api/companies/autofill", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id })
@@ -106,7 +107,7 @@ export default function CompaniesPage() {
   async function enrich(id: string) {
     setBusyId(id);
     try {
-      const r = await fetch("/api/companies/enrich", {
+      const r = await apiFetch("/api/companies/enrich", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id })
