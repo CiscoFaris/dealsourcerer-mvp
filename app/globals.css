@@ -24,3 +24,122 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* DealSourcerer Theme */
+:root{
+  --ds-navy:#0A5C8F;
+  --ds-navy-2:#0B3B5B;
+  --ds-ink:#0B1220;
+  --ds-muted:#5B677A;
+  --ds-bg:#F5F7FA;
+  --ds-card:#FFFFFF;
+  --ds-border:#D9DEE7;
+  --ds-link:#0A5C8F;
+  --ds-link-hover:#0B3B5B;
+}
+
+html,body{height:100%;}
+body{
+  background:var(--ds-bg);
+  color:var(--ds-ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+a{color:var(--ds-link); text-decoration:none;}
+a:hover{color:var(--ds-link-hover); text-decoration:underline;}
+
+.ds-header{
+  background:linear-gradient(180deg, var(--ds-navy) 0%, var(--ds-navy-2) 100%);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.ds-header-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.ds-brand{min-width:220px;}
+.ds-brand-title{
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  letter-spacing:.2px;
+  font-weight:700;
+  font-size:18px;
+}
+.ds-brand-sub{
+  font-size:12px;
+  opacity:.85;
+  margin-top:2px;
+}
+.ds-nav{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.ds-nav-link{
+  color:#fff;
+  opacity:.9;
+  font-size:13px;
+  padding:6px 8px;
+  border-radius:6px;
+}
+.ds-nav-link:hover{
+  opacity:1;
+  background:rgba(255,255,255,.10);
+  text-decoration:none;
+}
+.ds-logo{
+  margin-left:auto;
+  opacity:.95;
+}
+
+.ds-shell{
+  max-width:1180px;
+  margin:0 auto;
+  padding:18px;
+}
+
+.ds-card{
+  background:var(--ds-card);
+  border:1px solid var(--ds-border);
+  border-radius:10px;
+  padding:14px;
+}
+
+.ds-h1{
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight:700;
+  font-size:22px;
+  margin:0 0 10px 0;
+}
+.ds-subtle{color:var(--ds-muted); font-size:12px;}
+
+.ds-btn{
+  border:1px solid var(--ds-border);
+  background:#fff;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+}
+.ds-btn:hover{background:#F1F4F9;}
+.ds-btn-primary{
+  border-color:rgba(255,255,255,.15);
+  background:var(--ds-navy);
+  color:#fff;
+}
+.ds-btn-primary:hover{background:var(--ds-navy-2);}
+.ds-input{
+  border:1px solid var(--ds-border);
+  border-radius:8px;
+  padding:9px 10px;
+  font-size:13px;
+  background:#fff;
+}
+.ds-pre{
+  white-space:pre-wrap;
+  font-size:12px;
+  margin:0;
+}
